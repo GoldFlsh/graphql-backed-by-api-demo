@@ -20,8 +20,18 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
-	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compileOnly 'org.projectlombok:lombok'
+
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	testImplementation ('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'junit:junit' //Exclude to use Junit5-jupiter instead of junit4
+	}
+
+	//Junit 5
+	testImplementation group: 'org.hamcrest', name: 'hamcrest-all', version: '1.3'
+	testImplementation 'org.junit.jupiter:junit-jupiter-engine'
+	testImplementation 'org.junit.jupiter:junit-jupiter-params'
 }
