@@ -1,4 +1,4 @@
-package org.ryank.demo.graphql.schema.user;
+package org.ryank.demo.graphql.schema;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Value;
-import org.ryank.demo.graphql.schema.post.Post;
 
 @Value
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -23,6 +22,7 @@ public class User {
   private String website;
   private Company company;
   List<Post> posts;
+  List<Album> albums;
 
   public static User jsonToPojo(String json) throws IOException {
     return new ObjectMapper().readerFor(User.class).readValue(json);

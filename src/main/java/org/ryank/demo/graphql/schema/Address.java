@@ -1,14 +1,17 @@
-package org.ryank.demo.graphql.schema.user;
+package org.ryank.demo.graphql.schema;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
-import lombok.Value;
+import lombok.Data;
 
-@Value
+@Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 @AllArgsConstructor(onConstructor = @__(@JsonCreator))
-public class GeoCoords {
-  private String lat;
-  private String lng;
+public class Address {
+
+  private String suite;
+  private String city;
+  private String zipcode;
+  private GeoCoords geo;
 }
