@@ -1,4 +1,4 @@
-package org.ryank.demo.client.dto;
+package org.ryank.demo.graphql.dto;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -6,7 +6,7 @@ import static org.hamcrest.Matchers.is;
 import java.io.IOException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.ryank.demo.client.schema.user.User;
+import org.ryank.demo.graphql.schema.user.User;
 
 class UserTest {
 
@@ -29,7 +29,7 @@ class UserTest {
       + "    \"website\": \"hildegard.org\","
       + "    \"company\": {"
       + "      \"name\": \"Romaguera-Crona\","
-      + "      \"catchPhrase\": \"Multi-layered client-server neural-net\","
+      + "      \"catchPhrase\": \"Multi-layered graphql-server neural-net\","
       + "      \"bs\": \"harness real-time e-markets\""
       + "    }"
       + "  }";

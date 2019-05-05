@@ -1,4 +1,4 @@
-package org.ryank.demo.client.schema.user;
+package org.ryank.demo.graphql.schema.user;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

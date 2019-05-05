@@ -1,10 +1,10 @@
-package org.ryank.demo.client;
+package org.ryank.demo.graphql.service;
 
 import io.leangen.graphql.annotations.GraphQLArgument;
 import io.leangen.graphql.annotations.GraphQLQuery;
 import io.leangen.graphql.spqr.spring.annotations.GraphQLApi;
 import javax.validation.constraints.NotNull;
-import org.ryank.demo.client.schema.user.User;
+import org.ryank.demo.graphql.schema.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;

@@ -1,4 +1,4 @@
-package org.ryank.demo.client.schema.user;
+package org.ryank.demo.graphql.schema.user;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Value;
-import org.ryank.demo.client.schema.post.Post;
+import org.ryank.demo.graphql.schema.post.Post;
 
 @Value
 @JsonIgnoreProperties(ignoreUnknown = true)

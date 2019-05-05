@@ -1,4 +1,4 @@
-package org.ryank.demo.client;
+package org.ryank.demo.graphql.service;
 
 import io.leangen.graphql.annotations.GraphQLArgument;
 import io.leangen.graphql.annotations.GraphQLContext;
@@ -7,8 +7,8 @@ import io.leangen.graphql.spqr.spring.annotations.GraphQLApi;
 import java.util.Collection;
 import java.util.Optional;
 import java.util.Set;
-import org.ryank.demo.client.schema.comment.Comment;
-import org.ryank.demo.client.schema.post.Post;
+import org.ryank.demo.graphql.schema.comment.Comment;
+import org.ryank.demo.graphql.schema.post.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;

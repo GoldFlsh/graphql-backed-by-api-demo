@@ -1,4 +1,4 @@
-package org.ryank.demo.client.schema.user;
+package org.ryank.demo.graphql.schema.comment;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -8,7 +8,10 @@ import lombok.Value;
 @Value
 @JsonIgnoreProperties(ignoreUnknown = true)
 @AllArgsConstructor(onConstructor = @__(@JsonCreator))
-public class GeoCoords {
-  private String lat;
-  private String lng;
+public class Comment {
+
+  private Integer id;
+  private String name;
+  private String email;
+  private String body;
 }
