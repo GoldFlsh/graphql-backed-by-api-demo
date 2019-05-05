@@ -19,7 +19,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class PostClient {
 
-  private static final String BASE_URI_PATH = "https://jsonplaceholder.typicode.com/posts";
+  private static final String BASE_URI_PATH = "/posts";
 
   private final RestTemplate restTemplate;
 

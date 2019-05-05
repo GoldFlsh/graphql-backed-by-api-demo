@@ -19,7 +19,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class CommentClient {
 
-  private static final String BASE_URI_PATH = "https://jsonplaceholder.typicode.com/comments";
+  private static final String BASE_URI_PATH = "/comments";
 
   private final RestTemplate restTemplate;
 

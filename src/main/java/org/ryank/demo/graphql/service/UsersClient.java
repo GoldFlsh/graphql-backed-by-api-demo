@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class UsersClient {
 
-  private static final String BASE_URI_PATH = "https://jsonplaceholder.typicode.com/users";
+  private static final String BASE_URI_PATH = "/users";
 
   private final RestTemplate restTemplate;
 
