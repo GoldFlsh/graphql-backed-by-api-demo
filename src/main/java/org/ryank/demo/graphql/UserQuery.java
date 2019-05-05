@@ -5,6 +5,7 @@ import graphql.annotations.annotationTypes.GraphQLName;
 import graphql.schema.DataFetchingEnvironment;
 import javax.validation.constraints.NotNull;
 import org.ryank.demo.client.UsersClient;
+import org.ryank.demo.graphql.schema.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -22,7 +23,7 @@ public class UserQuery {
   @GraphQLField
   public User findUser(final DataFetchingEnvironment env,
       @NotNull @GraphQLName("id") final int id) {
-    client.getById(id);
+    return client.getById(id);
   }
 
 }

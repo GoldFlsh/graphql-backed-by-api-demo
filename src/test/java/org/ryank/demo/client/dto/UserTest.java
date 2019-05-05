@@ -38,6 +38,7 @@ class UserTest {
   @DisplayName("User.jsonToPojo should return a deserialized user pojo")
   void serializationOfUserObject() throws IOException {
     User output = User.jsonToPojo(exampleUserJson);
+    System.out.println(output);
     assertThat(output.getId(), is(1));
   }
 }
