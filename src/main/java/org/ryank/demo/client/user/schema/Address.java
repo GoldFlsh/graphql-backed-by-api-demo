@@ -1,4 +1,4 @@
-package org.ryank.demo.graphql.schema;
+package org.ryank.demo.client.user.schema;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -8,8 +8,10 @@ import lombok.Data;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 @AllArgsConstructor(onConstructor = @__(@JsonCreator))
-public class Company {
-  private String name;
-  private String catchPhrase;
-  private String bs; //I can't tell what bs is but it's in the dummy data
+public class Address {
+
+  private String suite;
+  private String city;
+  private String zipcode;
+  private GeoCoords geo;
 }
