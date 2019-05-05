@@ -6,7 +6,7 @@ import static org.hamcrest.Matchers.is;
 import java.io.IOException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.ryank.demo.client.user.User;
+import org.ryank.demo.client.user.schema.User;
 
 class UserTest {
 
