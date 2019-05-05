@@ -6,6 +6,7 @@ import static org.hamcrest.Matchers.is;
 import java.io.IOException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.ryank.demo.graphql.schema.User;
 
 class UserTest {
 

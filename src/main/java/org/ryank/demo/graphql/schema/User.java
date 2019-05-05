@@ -1,4 +1,4 @@
-package org.ryank.demo.client.dto;
+package org.ryank.demo.graphql.schema;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.databind.ObjectMapper;
