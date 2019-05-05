@@ -1,17 +1,17 @@
-package org.ryank.demo.client.user.schema;
+package org.ryank.demo.client.schema.comment;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Value;
 
-@Data
+@Value
 @JsonIgnoreProperties(ignoreUnknown = true)
 @AllArgsConstructor(onConstructor = @__(@JsonCreator))
-public class Address {
+public class Comment {
 
-  private String suite;
-  private String city;
-  private String zipcode;
-  private GeoCoords geo;
+  private Integer id;
+  private String name;
+  private String email;
+  private String body;
 }

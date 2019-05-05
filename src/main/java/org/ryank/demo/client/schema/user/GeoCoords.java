@@ -1,15 +1,14 @@
-package org.ryank.demo.client.user.schema;
+package org.ryank.demo.client.schema.user;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Value;
 
-@Data
+@Value
 @JsonIgnoreProperties(ignoreUnknown = true)
 @AllArgsConstructor(onConstructor = @__(@JsonCreator))
-public class Company {
-  private String name;
-  private String catchPhrase;
-  private String bs; //I can't tell what bs is but it's in the dummy data
+public class GeoCoords {
+  private String lat;
+  private String lng;
 }

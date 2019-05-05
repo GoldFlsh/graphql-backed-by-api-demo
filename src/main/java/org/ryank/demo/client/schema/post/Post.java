@@ -1,11 +1,11 @@
-package org.ryank.demo.client.post.schema;
+package org.ryank.demo.client.schema.post;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Value;
-import org.ryank.demo.client.comment.schema.Comment;
+import org.ryank.demo.client.schema.comment.Comment;
 
 @Value
 @JsonIgnoreProperties(ignoreUnknown = true)
