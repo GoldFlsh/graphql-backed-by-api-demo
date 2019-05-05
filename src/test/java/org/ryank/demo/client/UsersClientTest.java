@@ -9,16 +9,17 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.ryank.demo.client.user.UsersClient;
-import org.ryank.demo.client.user.User;
+import org.ryank.demo.client.user.schema.User;
+import org.springframework.web.client.RestTemplate;
 
 class UsersClientTest {
 
-  private UsersClient usersClient = new UsersClient();
+  private UsersClient usersClient = new UsersClient(new RestTemplate());
 
   @Test
   @DisplayName("getUser should get the specified user matching the id")
   void getUserById() throws IOException {
-    User user = usersClient.getById(1);
+    User user = usersClient.getUser(1);
     assertThat(user, is(User.jsonToPojo(FULL_USER_DATA_FOR_USER_1)));
   }
 
@@ -26,7 +27,7 @@ class UsersClientTest {
   @ValueSource(ints = {1, 2, 3, 4})
   @DisplayName("UsersClient should return a user that matches requested id")
   void getUserByIdParams(int userId) {
-    User user = usersClient.getById(userId);
+    User user = usersClient.getUser(userId);
     assertThat(user.getId(), is(userId));
   }
 

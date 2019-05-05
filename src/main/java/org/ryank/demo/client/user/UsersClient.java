@@ -5,6 +5,7 @@ import io.leangen.graphql.annotations.GraphQLQuery;
 import io.leangen.graphql.spqr.spring.annotations.GraphQLApi;
 import javax.validation.constraints.NotNull;
 import org.ryank.demo.client.user.schema.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -12,11 +13,17 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class UsersClient {
 
-  private final RestTemplate restTemplate = new RestTemplate();
-  private static final String BASE_URI_PATH = "https://jsonplaceholder.typicode.com/users/";
+  private static final String BASE_URI_PATH = "https://jsonplaceholder.typicode.com/users";
+
+  private final RestTemplate restTemplate;
+
+  @Autowired
+  public UsersClient(RestTemplate restTemplate) {
+    this.restTemplate = restTemplate;
+  }
 
   @GraphQLQuery
   public User getUser(@NotNull @GraphQLArgument(name = "id") Integer id) {
-    return restTemplate.getForEntity(BASE_URI_PATH + id, User.class).getBody();
+    return restTemplate.getForEntity(BASE_URI_PATH + "/" + id, User.class).getBody();
   }
 }
