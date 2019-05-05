@@ -10,6 +10,7 @@ import lombok.Data;
 @AllArgsConstructor(onConstructor = @__(@JsonCreator))
 public class Address {
 
+  private String street;
   private String suite;
   private String city;
   private String zipcode;

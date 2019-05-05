@@ -6,9 +6,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.util.List;
 import lombok.AllArgsConstructor;
-import lombok.Value;
+import lombok.Data;
+import lombok.experimental.Wither;
 
 @Value
+@Wither
 @JsonIgnoreProperties(ignoreUnknown = true)
 @AllArgsConstructor(onConstructor = @__(@JsonCreator))
 public class User {
