@@ -23,8 +23,6 @@ public class CommentClient {
 
   private final RestTemplate restTemplate;
 
-  //TODO Use URI Builder pattern based on arguments that aren't null instead of crappy two methods
-
   @Autowired
   public CommentClient(RestTemplate restTemplate) {
     this.restTemplate = restTemplate;
@@ -32,26 +30,27 @@ public class CommentClient {
 
   @GraphQLQuery(name = "comments")
   public Collection<Comment> getComments(@GraphQLArgument(name = "email") String email, @GraphQLContext Post post) {
+    return restTemplate.exchange(
+        buildUriFromParams(email, post),
+        HttpMethod.GET,
+        null,
+        new ParameterizedTypeReference<Set<Comment>>() {
+        }
+    ).getBody();
+  }
+
+  private String buildUriFromParams(String email, Post post) {
+    return BASE_URI_PATH + emailUriParam(email) + "&" + postUriParam(post);
+  }
+
+  private String emailUriParam(String email) {
     return Optional.ofNullable(email)
-        .map(o -> getComment(o, post))
-        .orElse(getComments(post));
+        .map(o -> "?email=" + email)
+        .orElse("");
   }
 
-  private Set<Comment> getComments(Post post) {
-    return restTemplate.exchange(
-        BASE_URI_PATH + "?postId=" + post.getId(),
-        HttpMethod.GET,
-        null,
-        new ParameterizedTypeReference<Set<Comment>>() {}
-    ).getBody();
-  }
 
-  private Set<Comment> getComment(String email, Post post) {
-    return restTemplate.exchange(
-        BASE_URI_PATH + "?email=" + email + "&?postId=" + post.getId(),
-        HttpMethod.GET,
-        null,
-        new ParameterizedTypeReference<Set<Comment>>() {}
-    ).getBody();
+  private String postUriParam(Post post) {
+    return "?postId=" + post.getId();
   }
 }
