@@ -7,6 +7,6 @@ import lombok.Data;
 @Data
 @AllArgsConstructor(onConstructor = @__(@JsonCreator))
 class GeoCoords {
-  private final String lat;
-  private final String lng;
+  private String lat;
+  private String lng;
 }

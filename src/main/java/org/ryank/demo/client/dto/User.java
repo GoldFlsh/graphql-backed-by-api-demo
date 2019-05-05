@@ -10,14 +10,14 @@ import lombok.Value;
 @AllArgsConstructor(onConstructor = @__(@JsonCreator))
 public class User {
 
-  private final Integer id;
-  private final String name;
-  private final String username;
-  private final String email;
-  private final Address address;
-  private final String phone;
-  private final String website;
-  private final Company company;
+  private Integer id;
+  private String name;
+  private String username;
+  private String email;
+  private Address address;
+  private String phone;
+  private String website;
+  private Company company;
 
   public static User jsonToPojo(String json) throws IOException {
     return new ObjectMapper().readerFor(User.class).readValue(json);
