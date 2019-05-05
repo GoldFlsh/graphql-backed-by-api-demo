@@ -8,7 +8,7 @@ import lombok.Value;
 @Value
 @JsonIgnoreProperties(ignoreUnknown = true)
 @AllArgsConstructor(onConstructor = @__(@JsonCreator))
-class GeoCoords {
+public class GeoCoords {
   private String lat;
   private String lng;
 }

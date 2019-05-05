@@ -25,7 +25,8 @@ dependencies {
 
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'io.github.graphql-java:graphql-java-annotations:6.2'
+	implementation 'io.leangen.graphql:graphql-spqr-spring-boot-starter:0.0.4'
+//	implementation 'io.github.graphql-java:graphql-java-annotations:6.2'
 
 	testImplementation ('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'junit:junit' //Exclude to use Junit5-jupiter instead of junit4

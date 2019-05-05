@@ -1,17 +1,23 @@
 package org.ryank.demo.client;
 
+import io.leangen.graphql.annotations.GraphQLArgument;
+import io.leangen.graphql.annotations.GraphQLQuery;
+import io.leangen.graphql.spqr.spring.annotations.GraphQLApi;
+import javax.validation.constraints.NotNull;
 import org.ryank.demo.graphql.schema.User;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 
-@Component
+@GraphQLApi
+@Service
 public class UsersClient {
 
   private final RestTemplate restTemplate = new RestTemplate();
   private static final String BASE_URI_PATH = "https://jsonplaceholder.typicode.com/users/";
 
-  public User getById(int userId) {
-    return restTemplate.getForEntity(BASE_URI_PATH + userId, User.class).getBody();
+  @GraphQLQuery
+  public User getUser(@NotNull @GraphQLArgument(name = "id") Integer id) {
+    return restTemplate.getForEntity(BASE_URI_PATH + id, User.class).getBody();
   }
 }

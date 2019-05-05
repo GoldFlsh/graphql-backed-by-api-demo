@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 @AllArgsConstructor(onConstructor = @__(@JsonCreator))
-class Company {
+public class Company {
   private String name;
   private String catchPhrase;
   private String bs; //I can't tell what bs is but it's in the dummy data
